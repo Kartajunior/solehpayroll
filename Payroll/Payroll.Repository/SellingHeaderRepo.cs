@@ -48,9 +48,9 @@ namespace Payroll.Repository
             return result;
         }
 
-        public static bool Update(SellingHeaderViewModel entity)
+        public static Responses Update(SellingHeaderViewModel entity)
         {
-            bool result = true;
+            Responses result = new Responses();
             try
             {
                 using (var db = new PayrollContext())
@@ -85,16 +85,17 @@ namespace Payroll.Repository
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                result = false;
+                result.Message = ex.Message;
+                result.Success = false;
             }
             return result;
         }
 
-        public static bool Delete(int id)
+        public static Responses Delete(int id)
         {
-            bool result = true;
+            Responses result = new Responses();
             try
             {
                 using (var db = new PayrollContext())
@@ -107,9 +108,10 @@ namespace Payroll.Repository
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                result = false;
+                result.Message = ex.Message;
+                result.Success = false;
             }
             return result;
         }

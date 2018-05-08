@@ -47,9 +47,28 @@ namespace Payroll.Repository
             return result;
         }
 
-        public static bool Update(AttendanceViewModel entity)
+        public static AttendanceViewModel GetByBadgeId(string badgeId)
         {
-            bool result = true;
+            AttendanceViewModel result = new AttendanceViewModel();
+            using (var db = new PayrollContext())
+            {
+                result = (from d in db.Attendance
+                          where d.BadgeId == badgeId
+                          select new AttendanceViewModel
+                          {
+                              Id = d.Id,
+                              BadgeId = d.BadgeId,
+                              CheckIn = d.CheckIn,
+                              CheckOut = d.CheckOut,
+                              IsActivated = d.IsActivated
+                          }).FirstOrDefault();
+            }
+            return result;
+        }
+
+        public static Responses Update(AttendanceViewModel entity)
+        {
+            Responses result = new Responses();
             try
             {
                 using (var db = new PayrollContext())
@@ -82,16 +101,17 @@ namespace Payroll.Repository
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                result = false;
+                result.Message = ex.Message;
+                result.Success = false;
             }
             return result;
         }
 
-        public static bool Delete(int id)
+        public static Responses Delete(int id)
         {
-            bool result = true;
+            Responses result = new Responses();
             try
             {
                 using (var db = new PayrollContext())
@@ -104,9 +124,10 @@ namespace Payroll.Repository
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                result = false;
+                result.Message = ex.Message;
+                result.Success = false;
             }
             return result;
         }

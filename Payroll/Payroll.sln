@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.MVC", "Payroll.MVC\Payroll.MVC.csproj", "{F17154D6-C8F8-40E2-AFE4-94918E985605}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.ViewModel", "Payroll.ViewModel\Payroll.ViewModel.csproj", "{A8DCB0DA-8773-4E38-86F9-1AD3BCFFBECD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll.Repository", "Payroll.Repository\Payroll.Repository.csproj", "{509FA8EE-8978-4F64-82C7-0E989BEF13AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll1.API", "Payroll1.API\Payroll1.API.csproj", "{A2D7754F-E2B5-4F29-A1A2-7620E066AE54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{509FA8EE-8978-4F64-82C7-0E989BEF13AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{509FA8EE-8978-4F64-82C7-0E989BEF13AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{509FA8EE-8978-4F64-82C7-0E989BEF13AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D7754F-E2B5-4F29-A1A2-7620E066AE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D7754F-E2B5-4F29-A1A2-7620E066AE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D7754F-E2B5-4F29-A1A2-7620E066AE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D7754F-E2B5-4F29-A1A2-7620E066AE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

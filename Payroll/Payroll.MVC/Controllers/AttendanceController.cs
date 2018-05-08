@@ -34,7 +34,8 @@ namespace Payroll.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (AttendanceRepo.Update(model))
+                Responses responses = (AttendanceRepo.Update(model));
+                if (responses.Success)
                 {
                     return Json(new { success = true }, JsonRequestBehavior.AllowGet);
                 }
@@ -58,7 +59,8 @@ namespace Payroll.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (AttendanceRepo.Update(model))
+                Responses responses = (AttendanceRepo.Update(model));
+                if (responses.Success)
                 {
                     return Json(new { success = true }, JsonRequestBehavior.AllowGet);
                 }
@@ -80,12 +82,13 @@ namespace Payroll.MVC.Controllers
         [HttpPost]
         public ActionResult DeleteConfirm(int id)
         {
-            if (AttendanceRepo.Delete(id))
+            Responses responses = (AttendanceRepo.Delete(id));
+            if (responses.Success)
             {
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(new { success = false, message = "Error Msg" }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = false, message = responses.Message }, JsonRequestBehavior.AllowGet);
         }
     }
 }

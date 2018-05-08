@@ -51,12 +51,11 @@
 <script type="text/javascript">
     $(".btn-Select").click(function () {
         //alert($(this).attr("data-id"));
-        //EmployeeInfo($(this).attr("data-badgeId"));
-        //EmployeePayroll($(this).attr("data-badgeId"));
+       
         $.ajax({
             url: '@Url.Action("GetSalaryComponent", "Payroll")',
             type: 'get',
-            data : {id: $(this).attr("data-id")},
+            data: { jobPositionId: $("#JobPositionId").val(), salaryComponentId: $(this).attr("data-id") },
             success: function (result) {
                 $("#employee-payroll").append(result);
                 

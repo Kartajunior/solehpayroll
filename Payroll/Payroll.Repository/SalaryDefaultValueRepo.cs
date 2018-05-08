@@ -58,6 +58,25 @@ namespace Payroll.Repository
             return result;
         }
 
+        //buatpayroll 
+        public static SalaryDefaultValueViewModel GetByJobPositionId(int jobPositionId, int salaryComponentId)
+        {
+            SalaryDefaultValueViewModel result = new SalaryDefaultValueViewModel();
+            using (var db = new PayrollContext())
+            {
+                result = db.SalaryDefaultValue
+                    .Where(o => o.JobPositionId == jobPositionId
+                   && o.SalaryComponentId == salaryComponentId)
+                    .Select(o => new SalaryDefaultValueViewModel
+                    {
+                        Id = o.Id,
+                        JobPositionId = o.JobPositionId,
+                        SalaryComponentId = o.SalaryComponentId,
+                        Value = o.Value
+                    }).FirstOrDefault();
+            }
+            return result;
+        }
         public static Responses Update(SalaryDefaultValueViewModel entity)
         {
             Responses result = new Responses();
