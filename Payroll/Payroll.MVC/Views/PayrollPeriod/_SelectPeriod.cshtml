@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Payroll.ViewModel.PayrollPeriodViewModel>
+
+<select class="form-control" id="PayrollPeriodId" name="PayrollPeriodId">
+    <option value="">Select Payroll Period</option>
+
+
+
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">
+            @item.Description
+
+        </option>
+
+    }
+
+</select>
+
+<button type="button" class="btn btn-sm btn-success" id="btn-select-period">
+    Select Period
+</button>
+
+<script type="text/javascript">
+    $("#btn-select-period").click(function () {
+        //alert($(this).attr("data-id"));
+        $.ajax({
+            url: '@Url.Action("SelectedPeriod", "PayrollPeriod")',
+            type: 'post',
+            data: { id: $("#PayrollPeriodId").val() },
+            success: function (result) {
+                if (result.success)
+                {
+                    alert("Description  : " + result.description);
+                    $("#payrol-period-desc").html(result.description);
+                }
+                else
+                {
+                    alert("Error , , , , ,");
+                }
+            }
+        })
+       
+       
+    })
+</script>

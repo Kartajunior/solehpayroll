@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Payroll.ViewModel.EmployeeSalaryViewModel>
+
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_GetSalaryComponent", item)
+}

@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "Payroll Form";
+}
+
+<div class="box">
+    <div class="box-header">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" id="txt-search" placeholder="Input NIP..." />
+                <button type="button" id="btn-search" class="btn btn-default btn-danger">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class=" box-body">
+        <div class="row">
+            <div class="col-lg-12" id="employee-info">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" id="btn-add" class="btn btn-default btn-success">
+                    Add Component
+                </button>
+                <button type="button" id="btn-save" class="btn btn-default btn-info">
+                    Save Salary
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th> Code</th>
+                            <th> Salary Component </th>
+                            <th> Basic Value </th>
+                            <th> Final Value</th>
+                            <th> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employee-payroll">
+                        <tr>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-Form">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            EmployeeInfo("");
+        })
+
+        var RemoveObject = null;
+
+        function EmployeeInfo(bId) {
+            $.ajax({
+                url: '@Url.Action("EmployeeInfo", "Payroll")',
+                type: 'get',
+                data: { badgeId: bId },
+                success: function (result) {
+                    $("#employee-info").html(result);
+                }
+            })
+        }
+
+        $("#btn-search").click(function () {
+            var bId = $("#txt-search").val();
+            var search = $("#txt-search").val();
+            $.ajax({
+                url: '@Url.Action("EmployeeExist", "Payroll")',
+                type: 'get',
+                data: { badgeId: bId },
+                success: function (result) {
+                    if (result.Exist) {
+                        EmployeeInfo(bId);
+                        EmployeePayroll(bId);
+                    }
+                    else {
+                        GetEmployeeList(search);
+                    }
+                }
+            })
+        })
+
+        function GetEmployeeList(search)
+        {
+            $.ajax({
+                url: '@Url.Action("EmployeeList", "Payroll")',
+                type: 'get',
+                data: { searching: search },
+                success: function (result) {
+                    $(".modal-body").html(result);
+                    $(".modal-title").html("List Employee");
+                    $("#modal-Form").modal("show");
+                }
+            })
+        }
+
+        function EmployeePayroll(bId) {
+            $.ajax({
+                url: '@Url.Action("EmployeePayroll", "Payroll")',
+                type: 'get',
+                data: { badgeId: bId },
+                success: function (result) {
+                    $("#employee-payroll").html(result);
+                }
+            })
+        }
+
+        $("#btn-add").click(function () {
+            //alert("jsdhsdha");
+            $.ajax({
+                url: '@Url.Action("SalaryComponentList", "Payroll")',
+                type: 'get',
+
+                success: function (result) {
+                    $(".modal-body").html(result);
+                    $(".modal-title").html(" List Salary Component");
+                    $("#modal-Form").modal("show");
+                }
+            })
+        })
+
+        function Remove(obj)
+        {
+            var tr = $(obj).closest("tr");
+            RemoveObject = tr;
+            var badgeId = $("#BadgeId").val();
+            var ppId = @Payroll.Repository.PayrollPeriodRepo.SelectedPeriod.Id;
+            var scId = $(tr).find("input[name=SalaryComponentId]").val();
+            
+            var data = {
+                BadgeId : badgeId,
+                PayrollPeriodId : ppId,
+                SalaryComponentId : scId
+            }
+            
+            $.ajax({
+                url: '@Url.Action("RemoveComponent", "Payroll")',
+                type: 'get',
+                data : { bId: badgeId, scId: scId},
+                success: function (result) {
+                    $(".modal-body").html(result);
+                    $(".modal-title").html("Remove Component");
+                    $("#modal-Form").modal("show");
+                }
+            })
+                
+        }
+
+
+        $("#btn-save").click(function () {
+            //alert("jsdhsdha");
+            var dataList = [];
+            var badgeId = $("#BadgeId").val();
+            var ppId = @Payroll.Repository.PayrollPeriodRepo.SelectedPeriod.Id;
+            $("#employee-payroll").find("tr").each(function(){
+
+                var scId = $(this).find("input[name=SalaryComponentId]").val();
+                var basVal = $(this).find("input[name=BasicValue]").val();
+                var data = {
+                    BadgeId : badgeId,
+                    PayrollPeriodId : ppId,
+                    SalaryComponentId : scId,
+                    BasicValue : basVal,
+
+
+                }
+                dataList.push(data);
+            })
+            //alert (JSON.stringify(dataList));
+            $.ajax({
+                url: '@Url.Action("SavePayroll", "Payroll")',
+                type: 'post',
+                data : {models : dataList},
+                success: function (result) {
+                    if (result.response.Success) 
+                    {
+                        alert("Success bos");
+                    }
+                    else {
+                        alert("Error bos");
+                    }
+                   
+                }
+            })
+
+        })
+
+        function RemoveComponent(){
+            if (RemoveObject != null) {
+                $(RemoveObject).remove();
+            }
+        }
+
+    </script>
+}

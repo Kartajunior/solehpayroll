@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Payroll.ViewModel.EmployeeViewModel>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>Select</th>
+        <th>
+            @Html.DisplayNameFor(model => model.BadgeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfHire)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <button type="button" class="btn btn-success btn-Select" data-id="@item.Id" data-badgeId="@item.BadgeId">
+                    Select
+                </button>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BadgeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfHire)
+            </td>
+
+        </tr>
+    }
+</table>
+
+<script type="text/javascript">
+    $(".btn-Select").click(function () {
+        //alert($(this).attr("data-badgeId"));
+        EmployeeInfo($(this).attr("data-badgeId"));
+        EmployeePayroll($(this).attr("data-badgeId"));
+        $("#modal-Form").modal("hide");
+    })
+</script>

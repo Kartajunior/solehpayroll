@@ -1,0 +1,100 @@
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\csc.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\System.Collections.Immutable.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\vbc.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\VBCSCompiler.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\roslyn\VBCSCompiler.exe.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.MVC.dll.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.MVC.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.MVC.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Antlr3.Runtime.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\EntityFramework.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\EntityFramework.SqlServer.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Newtonsoft.Json.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.Repository.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.ViewModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Helpers.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Mvc.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Optimization.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Razor.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.Deployment.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.Razor.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\WebGrease.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.DataModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.Repository.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.ViewModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\EntityFramework.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\EntityFramework.SqlServer.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Helpers.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Mvc.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Optimization.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.Razor.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.Deployment.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\System.Web.WebPages.Razor.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Antlr3.Runtime.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Newtonsoft.Json.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\bin\Payroll.DataModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.csprojResolveAssemblyReference.cache
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\csc.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\System.Collections.Immutable.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\vbc.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\VBCSCompiler.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\roslyn\VBCSCompiler.exe.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.MVC.dll.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.MVC.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.MVC.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Antlr3.Runtime.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\EntityFramework.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\EntityFramework.SqlServer.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Newtonsoft.Json.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.Repository.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.ViewModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Helpers.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Mvc.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Optimization.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Razor.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.Deployment.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.Razor.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\WebGrease.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.DataModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.Repository.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.ViewModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\EntityFramework.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\EntityFramework.SqlServer.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Helpers.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Mvc.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Optimization.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.Razor.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.Deployment.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\System.Web.WebPages.Razor.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Antlr3.Runtime.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Newtonsoft.Json.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\bin\Payroll.DataModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.csprojResolveAssemblyReference.cache
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.MVC\obj\Debug\Payroll.MVC.pdb

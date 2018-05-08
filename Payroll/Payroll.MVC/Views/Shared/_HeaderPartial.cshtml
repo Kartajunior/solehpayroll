@@ -1,0 +1,24 @@
+﻿<header class="main-header">
+    <a href="@Url.Action("", "Home")" class="logo" style="background-color: white;">
+        <img src="~/logo.jpg" style="width: 100%;" />
+        @*<span class="logo-lg">MRI</span>*@
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <span class="navbar-brand"  >
+                Current Period : 
+            </span>
+
+            <span class="navbar-brand" id="payrol-period-desc">
+                @Payroll.Repository.PayrollPeriodRepo.SelectedPeriod.Description
+            </span>
+
+            <ul class="nav navbar-nav">
+                @*@Html.Partial("_LoginPartial")*@
+            </ul>
+        </div>
+    </nav>
+</header>

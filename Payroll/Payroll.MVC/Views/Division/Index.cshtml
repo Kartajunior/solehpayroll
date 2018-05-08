@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Division";
+}
+
+
+<div class="box">
+    <div class="box-header">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" id="btn-Create" class="btn btn-lg btn-success"  >
+                    Create New
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-12" id="table-list">
+                <h4>Loading...</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-Form">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //alert("Masuk");
+            ShowList();
+        })
+
+        function ShowList()
+        {
+            $.ajax({
+                url: '@Url.Action("List","Division")',
+                type: 'get',
+                success: function (result) {
+                    $("#table-list").html(result);
+                }
+            })
+        }
+
+        $("#btn-Create").click(function () {
+            //alert("Masuk");
+            $.ajax({
+                url: '@Url.Action("Create","Division")',
+                type: 'get',
+                success: function (result) {
+                    $(".modal-body").html(result);
+                    $(".modal-title").html("Create New Division");
+                    $("#modal-Form").modal("show");
+                }
+            })
+        })
+
+    </script>
+}

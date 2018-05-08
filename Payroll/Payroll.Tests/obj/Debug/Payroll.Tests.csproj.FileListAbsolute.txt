@@ -1,0 +1,90 @@
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\csc.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\vbc.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.dll.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.MVC.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Helpers.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Razor.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Optimization.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.ViewModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.Repository.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.DataModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\EntityFramework.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.MVC.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Helpers.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Razor.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\System.Web.Optimization.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.ViewModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.Repository.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\Payroll.DataModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\bin\Debug\EntityFramework.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.csprojResolveAssemblyReference.cache
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\csc.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\vbc.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.dll.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.Tests.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.MVC.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Helpers.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Mvc.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Razor.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Optimization.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.ViewModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.Repository.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.DataModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\EntityFramework.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.MVC.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Helpers.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Mvc.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Razor.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\System.Web.Optimization.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.ViewModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.Repository.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\Payroll.DataModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\bin\Debug\EntityFramework.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.csprojResolveAssemblyReference.cache
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Tests\obj\Debug\Payroll.Tests.pdb

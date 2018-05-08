@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Payroll.ViewModel.PayrollPeriodViewModel>
+
+@{
+    Layout = "";
+}
+
+<table class="table" id="data-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCurrentPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActivated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodMonth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCurrentPeriod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActivated)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-warning btn-Edit" data-id="@item.Id" title="Edit">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-Delete" data-id="@item.Id" title="Delete">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $("#data-list").DataTable();
+    $(".btn-Edit").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Edit","PayrollPeriod")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Edit Employee");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+    $(".btn-Delete").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Delete","PayrollPeriod")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Delete Employee");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+</script>

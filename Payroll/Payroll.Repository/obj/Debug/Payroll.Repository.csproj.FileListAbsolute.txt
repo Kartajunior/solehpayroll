@@ -1,0 +1,28 @@
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.dll.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\EntityFramework.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.DataModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.ViewModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.DataModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\Payroll.ViewModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\EntityFramework.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.csprojResolveAssemblyReference.cache
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.dll.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.Repository.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\EntityFramework.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.DataModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.ViewModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.DataModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\Payroll.ViewModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\EntityFramework.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.csprojResolveAssemblyReference.cache
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.Repository\obj\Debug\Payroll.Repository.pdb

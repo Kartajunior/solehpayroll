@@ -1,0 +1,96 @@
+﻿@model Payroll.ViewModel.PayrollPeriodViewModel
+
+@{ 
+    Layout = "";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeriodYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeriodMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeginDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeginDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCurrentPeriod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCurrentPeriod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActivated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActivated)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="button" class="btn btn-danger btn-Delete-Confirm" data-id="@Model.Id">
+                Delete
+            </button>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+
+    $(".btn-Delete-Confirm").click(function () {
+
+        $.ajax({
+            url: '@Url.Action("DeleteConfirm","PayrollPeriod")',
+            type: "post",
+            data: { id : $(this).attr("data-id") },
+            success: function (result) {
+                if (result.success) {
+                    $("#modal-Form").modal("hide");
+                    ShowList(); // refresh, memanggil #table-list
+                }
+                else {
+                    alert("Error : " + result.message);
+                }
+
+            }
+        })
+    })
+
+</script>

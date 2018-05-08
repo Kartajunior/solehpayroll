@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fbb34c40a544a3e9ee5538f9455a439" Name="Diagram1">
+        <EntityTypeShape EntityType="Payroll.DataModel.Attendance" Width="1.5" PointX="10.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.Department" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.Division" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.Employee" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.EmployeeSalary" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.Item" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.JobPosition" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.PayrollPeriod" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.SalaryComponent" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.SalaryDefaultValue" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.SellingDetail" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Payroll.DataModel.SellingHeader" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="Payroll.DataModel.FK_Department_Division" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_JobPosition_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_Employee_JobPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_EmployeeSalary_PayrollPeriod" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_EmployeeSalary_SalaryComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_SellingDetail_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_SalaryDefaultValue_JobPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_SalaryDefaultValue_SalaryComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="Payroll.DataModel.FK_SellingDetail_SellingHeader" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

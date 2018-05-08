@@ -1,0 +1,144 @@
+﻿@model IEnumerable<Payroll.ViewModel.EmployeeViewModel>
+
+@{
+    Layout = "";
+}
+
+<table class="table" id="data-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BadgeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobCodeName)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfHire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfResign)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaceOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.GenderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActivated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BadgeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobCodeName)
+                </td>                
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfHire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfResign)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActivated)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-warning btn-Edit" data-id="@item.Id" title="Edit">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="btn btn-info btn-Details" data-id="@item.Id" title="Edit">
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>                            
+                        </button>
+                        <button type="button" class="btn btn-danger btn-Delete" data-id="@item.Id" title="Delete">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $("#data-list").DataTable();
+    $(".btn-Edit").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Edit","Employee")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Edit Employee");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+    $(".btn-Details").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Details","Employee")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Employee Details");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+    $(".btn-Delete").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Delete","Employee")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Delete Employee");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+</script>

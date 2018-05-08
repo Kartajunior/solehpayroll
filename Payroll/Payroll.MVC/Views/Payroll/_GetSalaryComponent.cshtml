@@ -1,0 +1,21 @@
+﻿@model Payroll.ViewModel.EmployeeSalaryViewModel
+<tr>
+    <td>
+        @Html.HiddenFor(model => model.SalaryComponentId) @Html.EditorFor(model => model.SalaryComponentCode, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.SalaryComponentName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.BasicValue, new { htmlAttributes = new { @class = "form-control" } })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.FinalValue, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    </td>
+    <td>
+        <button type="button" class="btn btn-sm btn-danger btn-remove" onclick="Remove(this)">
+            Delete
+        </button>
+    </td>
+</tr>
+

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Payroll.ViewModel.SalaryDefaultValueViewModel>
+
+@{ 
+    Layout = "";
+}
+
+<table class="table" id="data-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryComponentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActivated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryComponentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActivated)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-warning btn-Edit" data-id="@item.Id" title="Edit">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-Delete" data-id="@item.Id" title="Delete">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+    $("#data-list").DataTable();
+    $(".btn-Edit").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Edit","SalaryDefaultValue")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Edit Salary Value");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+        
+    $(".btn-Delete").click(function () {
+        //alert($(this).attr("data-id"));
+
+        $.ajax({
+            url: '@Url.Action("Delete","SalaryDefaultValue")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-body").html(result);
+                $(".modal-title").html("Delete Salary Value");
+                $("#modal-Form").modal("show");
+            }
+        })
+    })
+
+</script>

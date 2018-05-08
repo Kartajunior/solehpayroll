@@ -1,0 +1,20 @@
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.dll.config
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.pdb
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.csprojResolveAssemblyReference.cache
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.dll
+D:\Bootcamp\Bootcamp Batch 147 dotNet\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.dll.config
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\Payroll.DataModel.pdb
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.csprojResolveAssemblyReference.cache
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll.DataModel\obj\Debug\Payroll.DataModel.pdb

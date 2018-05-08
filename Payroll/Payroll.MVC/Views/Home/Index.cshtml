@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+   <div class="row">
+       <div class="col-lg-4" id="select-current-period">
+
+       </div>
+   </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+          
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: '@Url.Action("SelectPeriod", "PayrollPeriod")',
+                type: 'get',
+                
+                success: function (result) {
+                    $("#select-current-period").html(result);
+                  
+                }
+            })
+        })
+
+    </script>
+    }
