@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Employee Auth";
+}
+
+
+<div class="box">
+    <div class="box-header">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" id="btn-auth" class="btn btn-lg btn-success">
+                    Authentication
+                </button>
+                <button type="button" id="btn-Clear" class="btn btn-lg btn-danger">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-header">
+        <div class="row">
+            <div class="col-md-6">
+                Username : <input type="text" id="text-username" />
+                Password : <input type="text" id="text-password" />
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="row">
+    <div col-md-12>
+        <ul id="list-emp">
+
+
+        </ul>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var listemployee = $('#list-emp');
+            $("#btn-auth").click(function () {
+                var username = $('#text-username').val();
+                var password = $('#text-password').val();
+
+                $.ajax({
+                    url: "http://localhost:5495/api/employee",
+                    type: 'get',
+                    dataType : 'json',
+                    header : {
+                        'Authorization': 'Basic' + btoa(username + ':' +password)
+                    },
+
+                    success: function (data) {
+                        //alert(JSON.stringify(result));
+                        listemployee.empty();
+                        $.each(data, function(index, val){
+                            var fullName = val.FirstName + ' ' + val.lastName;
+                            listemployee.append('<li>' + fullName +'</li>');
+                        });
+                 
+                    },
+                    complete: function (jqXHR) {
+                        if (jqXHR.status =='401') {
+                            listemployee.empty();
+                            listemployee.append('<li>' + jqXHR.status + ' : ' + jqXHR.statusText + '</li>')
+                        }
+                    }
+                });
+            });
+
+        });
+
+</script>
+}

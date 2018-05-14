@@ -17,7 +17,7 @@ namespace Payroll.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Division()
         {
-            this.Departments = new HashSet<Department>();
+            this.Department = new HashSet<Department>();
         }
     
         public int Id { get; set; }
@@ -30,6 +30,6 @@ namespace Payroll.DataModel
         public Nullable<System.DateTime> ModifyDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Department> Departments { get; set; }
+        public virtual ICollection<Department> Department { get; set; }
     }
 }

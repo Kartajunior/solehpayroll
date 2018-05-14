@@ -19,7 +19,15 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        
+         @*@HttpContext.Current.User.Identity.Name
+
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+            }
+        }*@
     </div>
     <div class="col-md-4">
       

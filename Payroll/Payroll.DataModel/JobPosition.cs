@@ -17,8 +17,8 @@ namespace Payroll.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JobPosition()
         {
-            this.Employees = new HashSet<Employee>();
-            this.SalaryDefaultValues = new HashSet<SalaryDefaultValue>();
+            this.Employee = new HashSet<Employee>();
+            this.SalaryDefaultValue = new HashSet<SalaryDefaultValue>();
         }
     
         public int Id { get; set; }
@@ -33,8 +33,8 @@ namespace Payroll.DataModel
     
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employee> Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalaryDefaultValue> SalaryDefaultValues { get; set; }
+        public virtual ICollection<SalaryDefaultValue> SalaryDefaultValue { get; set; }
     }
 }

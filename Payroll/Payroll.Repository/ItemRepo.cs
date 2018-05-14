@@ -10,6 +10,28 @@ namespace Payroll.Repository
 {
     public class ItemRepo
     {
+
+        public static List<ItemViewModel> GetTen( string filter)
+        {
+            List<ItemViewModel> result = new List<ItemViewModel>();
+            using (var db = new PayrollContext())
+            {
+                result = (from d in db.Item
+                          where d.Code.Contains(filter) || d.Description.Contains(filter)
+                          || filter == null
+                          select new ItemViewModel
+                          {
+                              Id = d.Id,
+                              Code = d.Code,
+                              Description = d.Description,
+                              Price = d.Price,
+                              Stock = d.Stock,
+                              IsActivated = d.IsActivated
+                          }).Take(10).ToList();
+            }
+            return result;
+        }
+
         public static List<ItemViewModel> Get()
         {
             List<ItemViewModel> result = new List<ItemViewModel>();

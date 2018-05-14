@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace Payroll.MVC.Controllers
 {
+    [Authorize]
+
     public class DepartmentController : Controller
     {
         // GET: Department

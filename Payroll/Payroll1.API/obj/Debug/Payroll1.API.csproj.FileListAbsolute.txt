@@ -54,3 +54,6 @@ C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\Payroll.ViewModel.pdb
 C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\EntityFramework.xml
 C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\EntityFramework.SqlServer.dll
 C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\EntityFramework.SqlServer.xml
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\System.Web.Cors.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\System.Web.Http.Cors.dll
+C:\SOLEH BOOTCAMP\solehpayroll\Payroll\Payroll1.API\bin\System.Web.Http.Cors.xml

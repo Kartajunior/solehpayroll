@@ -97,5 +97,11 @@ namespace Payroll.MVC.Controllers
         {
             return View("_Details", EmployeeRepo.GetById(id));
         }
+
+        public ActionResult Employee()
+        {
+            return View();
+        }
+
     }
 }

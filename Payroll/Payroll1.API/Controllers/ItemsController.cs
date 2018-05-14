@@ -6,17 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Payroll1.API.Controllers
 {
+   // [EnableCorsAttribute("*", "*", "*")]
+
     public class ItemsController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<ItemViewModel> Get()
+        [HttpGet]
+        public IEnumerable<ItemViewModel> Get(string search)
         {
-            return ItemRepo.Get();
+            return ItemRepo.GetTen(search);
         }
-
+      
         // GET api/<controller>/5
         public ItemViewModel Get(int id)
         {

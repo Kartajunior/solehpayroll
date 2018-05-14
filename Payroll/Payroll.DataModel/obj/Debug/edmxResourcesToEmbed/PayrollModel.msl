@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PayrollDataModelStoreContainer" CdmEntityContainer="PayrollContext">
-    <EntitySetMapping Name="Attendances">
+    <EntitySetMapping Name="Attendance">
       <EntityTypeMapping TypeName="Payroll.DataModel.Attendance">
         <MappingFragment StoreEntitySet="Attendance">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -16,7 +16,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Departments">
+    <EntitySetMapping Name="Department">
       <EntityTypeMapping TypeName="Payroll.DataModel.Department">
         <MappingFragment StoreEntitySet="Department">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -31,7 +31,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Divisions">
+    <EntitySetMapping Name="Division">
       <EntityTypeMapping TypeName="Payroll.DataModel.Division">
         <MappingFragment StoreEntitySet="Division">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -45,7 +45,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Employees">
+    <EntitySetMapping Name="Employee">
       <EntityTypeMapping TypeName="Payroll.DataModel.Employee">
         <MappingFragment StoreEntitySet="Employee">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -68,7 +68,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EmployeeSalaries">
+    <EntitySetMapping Name="EmployeeSalary">
       <EntityTypeMapping TypeName="Payroll.DataModel.EmployeeSalary">
         <MappingFragment StoreEntitySet="EmployeeSalary">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -85,7 +85,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Items">
+    <EntitySetMapping Name="Item">
       <EntityTypeMapping TypeName="Payroll.DataModel.Item">
         <MappingFragment StoreEntitySet="Item">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -101,7 +101,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="JobPositions">
+    <EntitySetMapping Name="JobPosition">
       <EntityTypeMapping TypeName="Payroll.DataModel.JobPosition">
         <MappingFragment StoreEntitySet="JobPosition">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -116,7 +116,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PayrollPeriods">
+    <EntitySetMapping Name="PayrollPeriod">
       <EntityTypeMapping TypeName="Payroll.DataModel.PayrollPeriod">
         <MappingFragment StoreEntitySet="PayrollPeriod">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -133,7 +133,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SalaryComponents">
+    <EntitySetMapping Name="SalaryComponent">
       <EntityTypeMapping TypeName="Payroll.DataModel.SalaryComponent">
         <MappingFragment StoreEntitySet="SalaryComponent">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -149,7 +149,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SalaryDefaultValues">
+    <EntitySetMapping Name="SalaryDefaultValue">
       <EntityTypeMapping TypeName="Payroll.DataModel.SalaryDefaultValue">
         <MappingFragment StoreEntitySet="SalaryDefaultValue">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -164,7 +164,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SellingDetails">
+    <EntitySetMapping Name="SellingDetail">
       <EntityTypeMapping TypeName="Payroll.DataModel.SellingDetail">
         <MappingFragment StoreEntitySet="SellingDetail">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -181,7 +181,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SellingHeaders">
+    <EntitySetMapping Name="SellingHeader">
       <EntityTypeMapping TypeName="Payroll.DataModel.SellingHeader">
         <MappingFragment StoreEntitySet="SellingHeader">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -194,6 +194,15 @@
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
           <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Payroll.DataModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

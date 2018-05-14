@@ -17,8 +17,8 @@ namespace Payroll.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SalaryComponent()
         {
-            this.EmployeeSalaries = new HashSet<EmployeeSalary>();
-            this.SalaryDefaultValues = new HashSet<SalaryDefaultValue>();
+            this.EmployeeSalary = new HashSet<EmployeeSalary>();
+            this.SalaryDefaultValue = new HashSet<SalaryDefaultValue>();
         }
     
         public int Id { get; set; }
@@ -33,8 +33,8 @@ namespace Payroll.DataModel
         public Nullable<System.DateTime> ModifyDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeSalary> EmployeeSalaries { get; set; }
+        public virtual ICollection<EmployeeSalary> EmployeeSalary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalaryDefaultValue> SalaryDefaultValues { get; set; }
+        public virtual ICollection<SalaryDefaultValue> SalaryDefaultValue { get; set; }
     }
 }

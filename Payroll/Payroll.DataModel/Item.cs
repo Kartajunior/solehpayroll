@@ -17,7 +17,7 @@ namespace Payroll.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
         {
-            this.SellingDetails = new HashSet<SellingDetail>();
+            this.SellingDetail = new HashSet<SellingDetail>();
         }
     
         public int Id { get; set; }
@@ -32,6 +32,6 @@ namespace Payroll.DataModel
         public Nullable<System.DateTime> ModifyDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SellingDetail> SellingDetails { get; set; }
+        public virtual ICollection<SellingDetail> SellingDetail { get; set; }
     }
 }

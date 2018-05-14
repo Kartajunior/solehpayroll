@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace Payroll1.API.Controllers
 {
-    public class DivisionController : ApiController
+    public class DivisionsController : ApiController
     {
         // GET api/<controller>
         public IEnumerable<DivisionViewModel> Get()

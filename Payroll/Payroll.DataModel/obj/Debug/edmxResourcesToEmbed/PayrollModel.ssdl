@@ -184,6 +184,14 @@
     <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
     <Property Name="ModifyDate" Type="datetime" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Department_Division">
     <End Role="Division" Type="Self.Division" Multiplicity="1" />
     <End Role="Department" Type="Self.Department" Multiplicity="*" />
@@ -305,6 +313,7 @@
     <EntitySet Name="SalaryDefaultValue" EntityType="Self.SalaryDefaultValue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellingDetail" EntityType="Self.SellingDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellingHeader" EntityType="Self.SellingHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Department_Division" Association="Self.FK_Department_Division">
       <End Role="Division" EntitySet="Division" />
       <End Role="Department" EntitySet="Department" />

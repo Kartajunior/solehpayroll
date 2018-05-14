@@ -57,11 +57,13 @@
     <Compile Include="ItemRepo.cs" />
     <Compile Include="JobPositionRepo.cs" />
     <Compile Include="PayrollPeriodRepo.cs" />
+    <Compile Include="PosRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryComponentRepo.cs" />
     <Compile Include="SalaryDefaultValueRepo.cs" />
     <Compile Include="SellingDetailRepo.cs" />
     <Compile Include="SellingHeaderRepo.cs" />
+    <Compile Include="UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Payroll.DataModel\Payroll.DataModel.csproj">

@@ -52,7 +52,11 @@
                 type: 'get',
                 success: function (result) {
                     $("#table-list").html(result);
+                },
+                error: function (err) {
+                    alert(err);
                 }
+
             })
         }
 

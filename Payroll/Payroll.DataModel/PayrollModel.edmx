@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Payroll.DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Payroll.DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Attendance">
           <Key>
             <PropertyRef Name="Id" />
@@ -189,6 +189,14 @@
           <Property Name="ModifyBy" Type="varchar" MaxLength="50" />
           <Property Name="ModifyDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Department_Division">
           <End Role="Division" Type="Self.Division" Multiplicity="1" />
           <End Role="Department" Type="Self.Department" Multiplicity="*" />
@@ -310,6 +318,7 @@
           <EntitySet Name="SalaryDefaultValue" EntityType="Self.SalaryDefaultValue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SellingDetail" EntityType="Self.SellingDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SellingHeader" EntityType="Self.SellingHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Department_Division" Association="Self.FK_Department_Division">
             <End Role="Division" EntitySet="Division" />
             <End Role="Department" EntitySet="Department" />
@@ -347,8 +356,7 @@
             <End Role="SellingDetail" EntitySet="SellingDetail" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Payroll.DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -380,7 +388,7 @@
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Division" Relationship="Self.FK_Department_Division" FromRole="Department" ToRole="Division" />
-          <NavigationProperty Name="JobPositions" Relationship="Self.FK_JobPosition_Department" FromRole="Department" ToRole="JobPosition" />
+          <NavigationProperty Name="JobPosition" Relationship="Self.FK_JobPosition_Department" FromRole="Department" ToRole="JobPosition" />
         </EntityType>
         <EntityType Name="Division">
           <Key>
@@ -394,7 +402,7 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Division" FromRole="Division" ToRole="Department" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Department_Division" FromRole="Division" ToRole="Department" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -410,7 +418,7 @@
           <Property Name="DateOfHire" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateOfResign" Type="DateTime" Precision="0" />
           <Property Name="PlaceOfBirth" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IsActivated" Type="Boolean" Nullable="false" />
           <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -451,7 +459,7 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SellingDetails" Relationship="Self.FK_SellingDetail_Item" FromRole="Item" ToRole="SellingDetail" />
+          <NavigationProperty Name="SellingDetail" Relationship="Self.FK_SellingDetail_Item" FromRole="Item" ToRole="SellingDetail" />
         </EntityType>
         <EntityType Name="JobPosition">
           <Key>
@@ -467,8 +475,8 @@
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Department" Relationship="Self.FK_JobPosition_Department" FromRole="JobPosition" ToRole="Department" />
-          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_JobPosition" FromRole="JobPosition" ToRole="Employee" />
-          <NavigationProperty Name="SalaryDefaultValues" Relationship="Self.FK_SalaryDefaultValue_JobPosition" FromRole="JobPosition" ToRole="SalaryDefaultValue" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_JobPosition" FromRole="JobPosition" ToRole="Employee" />
+          <NavigationProperty Name="SalaryDefaultValue" Relationship="Self.FK_SalaryDefaultValue_JobPosition" FromRole="JobPosition" ToRole="SalaryDefaultValue" />
         </EntityType>
         <EntityType Name="PayrollPeriod">
           <Key>
@@ -485,7 +493,7 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="EmployeeSalaries" Relationship="Self.FK_EmployeeSalary_PayrollPeriod" FromRole="PayrollPeriod" ToRole="EmployeeSalary" />
+          <NavigationProperty Name="EmployeeSalary" Relationship="Self.FK_EmployeeSalary_PayrollPeriod" FromRole="PayrollPeriod" ToRole="EmployeeSalary" />
         </EntityType>
         <EntityType Name="SalaryComponent">
           <Key>
@@ -501,8 +509,8 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="EmployeeSalaries" Relationship="Self.FK_EmployeeSalary_SalaryComponent" FromRole="SalaryComponent" ToRole="EmployeeSalary" />
-          <NavigationProperty Name="SalaryDefaultValues" Relationship="Self.FK_SalaryDefaultValue_SalaryComponent" FromRole="SalaryComponent" ToRole="SalaryDefaultValue" />
+          <NavigationProperty Name="EmployeeSalary" Relationship="Self.FK_EmployeeSalary_SalaryComponent" FromRole="SalaryComponent" ToRole="EmployeeSalary" />
+          <NavigationProperty Name="SalaryDefaultValue" Relationship="Self.FK_SalaryDefaultValue_SalaryComponent" FromRole="SalaryComponent" ToRole="SalaryDefaultValue" />
         </EntityType>
         <EntityType Name="SalaryDefaultValue">
           <Key>
@@ -552,7 +560,15 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SellingDetails" Relationship="Self.FK_SellingDetail_SellingHeader" FromRole="SellingHeader" ToRole="SellingDetail" />
+          <NavigationProperty Name="SellingDetail" Relationship="Self.FK_SellingDetail_SellingHeader" FromRole="SellingHeader" ToRole="SellingDetail" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <Association Name="FK_Department_Division">
           <End Role="Division" Type="Self.Division" Multiplicity="1" />
@@ -663,53 +679,54 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PayrollContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Attendances" EntityType="Self.Attendance" />
-          <EntitySet Name="Departments" EntityType="Self.Department" />
-          <EntitySet Name="Divisions" EntityType="Self.Division" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
-          <EntitySet Name="EmployeeSalaries" EntityType="Self.EmployeeSalary" />
-          <EntitySet Name="Items" EntityType="Self.Item" />
-          <EntitySet Name="JobPositions" EntityType="Self.JobPosition" />
-          <EntitySet Name="PayrollPeriods" EntityType="Self.PayrollPeriod" />
-          <EntitySet Name="SalaryComponents" EntityType="Self.SalaryComponent" />
-          <EntitySet Name="SalaryDefaultValues" EntityType="Self.SalaryDefaultValue" />
-          <EntitySet Name="SellingDetails" EntityType="Self.SellingDetail" />
-          <EntitySet Name="SellingHeaders" EntityType="Self.SellingHeader" />
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Division" EntityType="Self.Division" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeSalary" EntityType="Self.EmployeeSalary" />
+          <EntitySet Name="Item" EntityType="Self.Item" />
+          <EntitySet Name="JobPosition" EntityType="Self.JobPosition" />
+          <EntitySet Name="PayrollPeriod" EntityType="Self.PayrollPeriod" />
+          <EntitySet Name="SalaryComponent" EntityType="Self.SalaryComponent" />
+          <EntitySet Name="SalaryDefaultValue" EntityType="Self.SalaryDefaultValue" />
+          <EntitySet Name="SellingDetail" EntityType="Self.SellingDetail" />
+          <EntitySet Name="SellingHeader" EntityType="Self.SellingHeader" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="FK_Department_Division" Association="Self.FK_Department_Division">
-            <End Role="Division" EntitySet="Divisions" />
-            <End Role="Department" EntitySet="Departments" />
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Department" EntitySet="Department" />
           </AssociationSet>
           <AssociationSet Name="FK_JobPosition_Department" Association="Self.FK_JobPosition_Department">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="JobPosition" EntitySet="JobPositions" />
+            <End Role="Department" EntitySet="Department" />
+            <End Role="JobPosition" EntitySet="JobPosition" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_JobPosition" Association="Self.FK_Employee_JobPosition">
-            <End Role="JobPosition" EntitySet="JobPositions" />
-            <End Role="Employee" EntitySet="Employees" />
+            <End Role="JobPosition" EntitySet="JobPosition" />
+            <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeeSalary_PayrollPeriod" Association="Self.FK_EmployeeSalary_PayrollPeriod">
-            <End Role="PayrollPeriod" EntitySet="PayrollPeriods" />
-            <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+            <End Role="PayrollPeriod" EntitySet="PayrollPeriod" />
+            <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeeSalary_SalaryComponent" Association="Self.FK_EmployeeSalary_SalaryComponent">
-            <End Role="SalaryComponent" EntitySet="SalaryComponents" />
-            <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+            <End Role="SalaryComponent" EntitySet="SalaryComponent" />
+            <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
           </AssociationSet>
           <AssociationSet Name="FK_SellingDetail_Item" Association="Self.FK_SellingDetail_Item">
-            <End Role="Item" EntitySet="Items" />
-            <End Role="SellingDetail" EntitySet="SellingDetails" />
+            <End Role="Item" EntitySet="Item" />
+            <End Role="SellingDetail" EntitySet="SellingDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_SalaryDefaultValue_JobPosition" Association="Self.FK_SalaryDefaultValue_JobPosition">
-            <End Role="JobPosition" EntitySet="JobPositions" />
-            <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValues" />
+            <End Role="JobPosition" EntitySet="JobPosition" />
+            <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValue" />
           </AssociationSet>
           <AssociationSet Name="FK_SalaryDefaultValue_SalaryComponent" Association="Self.FK_SalaryDefaultValue_SalaryComponent">
-            <End Role="SalaryComponent" EntitySet="SalaryComponents" />
-            <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValues" />
+            <End Role="SalaryComponent" EntitySet="SalaryComponent" />
+            <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValue" />
           </AssociationSet>
           <AssociationSet Name="FK_SellingDetail_SellingHeader" Association="Self.FK_SellingDetail_SellingHeader">
-            <End Role="SellingHeader" EntitySet="SellingHeaders" />
-            <End Role="SellingDetail" EntitySet="SellingDetails" />
+            <End Role="SellingHeader" EntitySet="SellingHeader" />
+            <End Role="SellingDetail" EntitySet="SellingDetail" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -718,7 +735,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PayrollDataModelStoreContainer" CdmEntityContainer="PayrollContext">
-          <EntitySetMapping Name="Attendances">
+          <EntitySetMapping Name="Attendance">
             <EntityTypeMapping TypeName="Payroll.DataModel.Attendance">
               <MappingFragment StoreEntitySet="Attendance">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -733,7 +750,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Departments">
+          <EntitySetMapping Name="Department">
             <EntityTypeMapping TypeName="Payroll.DataModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -748,7 +765,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Divisions">
+          <EntitySetMapping Name="Division">
             <EntityTypeMapping TypeName="Payroll.DataModel.Division">
               <MappingFragment StoreEntitySet="Division">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -762,7 +779,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
+          <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="Payroll.DataModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -785,7 +802,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EmployeeSalaries">
+          <EntitySetMapping Name="EmployeeSalary">
             <EntityTypeMapping TypeName="Payroll.DataModel.EmployeeSalary">
               <MappingFragment StoreEntitySet="EmployeeSalary">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -802,7 +819,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Items">
+          <EntitySetMapping Name="Item">
             <EntityTypeMapping TypeName="Payroll.DataModel.Item">
               <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -818,7 +835,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="JobPositions">
+          <EntitySetMapping Name="JobPosition">
             <EntityTypeMapping TypeName="Payroll.DataModel.JobPosition">
               <MappingFragment StoreEntitySet="JobPosition">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -833,7 +850,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PayrollPeriods">
+          <EntitySetMapping Name="PayrollPeriod">
             <EntityTypeMapping TypeName="Payroll.DataModel.PayrollPeriod">
               <MappingFragment StoreEntitySet="PayrollPeriod">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -850,7 +867,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SalaryComponents">
+          <EntitySetMapping Name="SalaryComponent">
             <EntityTypeMapping TypeName="Payroll.DataModel.SalaryComponent">
               <MappingFragment StoreEntitySet="SalaryComponent">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -866,7 +883,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SalaryDefaultValues">
+          <EntitySetMapping Name="SalaryDefaultValue">
             <EntityTypeMapping TypeName="Payroll.DataModel.SalaryDefaultValue">
               <MappingFragment StoreEntitySet="SalaryDefaultValue">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -881,7 +898,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SellingDetails">
+          <EntitySetMapping Name="SellingDetail">
             <EntityTypeMapping TypeName="Payroll.DataModel.SellingDetail">
               <MappingFragment StoreEntitySet="SellingDetail">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -898,7 +915,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SellingHeaders">
+          <EntitySetMapping Name="SellingHeader">
             <EntityTypeMapping TypeName="Payroll.DataModel.SellingHeader">
               <MappingFragment StoreEntitySet="SellingHeader">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -911,6 +928,15 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
                 <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Payroll.DataModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -928,7 +954,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

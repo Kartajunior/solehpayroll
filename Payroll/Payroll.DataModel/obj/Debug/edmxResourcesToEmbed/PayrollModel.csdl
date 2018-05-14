@@ -28,7 +28,7 @@
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Division" Relationship="Self.FK_Department_Division" FromRole="Department" ToRole="Division" />
-    <NavigationProperty Name="JobPositions" Relationship="Self.FK_JobPosition_Department" FromRole="Department" ToRole="JobPosition" />
+    <NavigationProperty Name="JobPosition" Relationship="Self.FK_JobPosition_Department" FromRole="Department" ToRole="JobPosition" />
   </EntityType>
   <EntityType Name="Division">
     <Key>
@@ -42,7 +42,7 @@
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Division" FromRole="Division" ToRole="Department" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Department_Division" FromRole="Division" ToRole="Department" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -58,7 +58,7 @@
     <Property Name="DateOfHire" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="DateOfResign" Type="DateTime" Precision="0" />
     <Property Name="PlaceOfBirth" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" Nullable="false" />
     <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="IsActivated" Type="Boolean" Nullable="false" />
     <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -99,7 +99,7 @@
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="SellingDetails" Relationship="Self.FK_SellingDetail_Item" FromRole="Item" ToRole="SellingDetail" />
+    <NavigationProperty Name="SellingDetail" Relationship="Self.FK_SellingDetail_Item" FromRole="Item" ToRole="SellingDetail" />
   </EntityType>
   <EntityType Name="JobPosition">
     <Key>
@@ -115,8 +115,8 @@
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Department" Relationship="Self.FK_JobPosition_Department" FromRole="JobPosition" ToRole="Department" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_JobPosition" FromRole="JobPosition" ToRole="Employee" />
-    <NavigationProperty Name="SalaryDefaultValues" Relationship="Self.FK_SalaryDefaultValue_JobPosition" FromRole="JobPosition" ToRole="SalaryDefaultValue" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_JobPosition" FromRole="JobPosition" ToRole="Employee" />
+    <NavigationProperty Name="SalaryDefaultValue" Relationship="Self.FK_SalaryDefaultValue_JobPosition" FromRole="JobPosition" ToRole="SalaryDefaultValue" />
   </EntityType>
   <EntityType Name="PayrollPeriod">
     <Key>
@@ -133,7 +133,7 @@
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="EmployeeSalaries" Relationship="Self.FK_EmployeeSalary_PayrollPeriod" FromRole="PayrollPeriod" ToRole="EmployeeSalary" />
+    <NavigationProperty Name="EmployeeSalary" Relationship="Self.FK_EmployeeSalary_PayrollPeriod" FromRole="PayrollPeriod" ToRole="EmployeeSalary" />
   </EntityType>
   <EntityType Name="SalaryComponent">
     <Key>
@@ -149,8 +149,8 @@
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="EmployeeSalaries" Relationship="Self.FK_EmployeeSalary_SalaryComponent" FromRole="SalaryComponent" ToRole="EmployeeSalary" />
-    <NavigationProperty Name="SalaryDefaultValues" Relationship="Self.FK_SalaryDefaultValue_SalaryComponent" FromRole="SalaryComponent" ToRole="SalaryDefaultValue" />
+    <NavigationProperty Name="EmployeeSalary" Relationship="Self.FK_EmployeeSalary_SalaryComponent" FromRole="SalaryComponent" ToRole="EmployeeSalary" />
+    <NavigationProperty Name="SalaryDefaultValue" Relationship="Self.FK_SalaryDefaultValue_SalaryComponent" FromRole="SalaryComponent" ToRole="SalaryDefaultValue" />
   </EntityType>
   <EntityType Name="SalaryDefaultValue">
     <Key>
@@ -200,7 +200,15 @@
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="SellingDetails" Relationship="Self.FK_SellingDetail_SellingHeader" FromRole="SellingHeader" ToRole="SellingDetail" />
+    <NavigationProperty Name="SellingDetail" Relationship="Self.FK_SellingDetail_SellingHeader" FromRole="SellingHeader" ToRole="SellingDetail" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <Association Name="FK_Department_Division">
     <End Role="Division" Type="Self.Division" Multiplicity="1" />
@@ -311,53 +319,54 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="PayrollContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Attendances" EntityType="Self.Attendance" />
-    <EntitySet Name="Departments" EntityType="Self.Department" />
-    <EntitySet Name="Divisions" EntityType="Self.Division" />
-    <EntitySet Name="Employees" EntityType="Self.Employee" />
-    <EntitySet Name="EmployeeSalaries" EntityType="Self.EmployeeSalary" />
-    <EntitySet Name="Items" EntityType="Self.Item" />
-    <EntitySet Name="JobPositions" EntityType="Self.JobPosition" />
-    <EntitySet Name="PayrollPeriods" EntityType="Self.PayrollPeriod" />
-    <EntitySet Name="SalaryComponents" EntityType="Self.SalaryComponent" />
-    <EntitySet Name="SalaryDefaultValues" EntityType="Self.SalaryDefaultValue" />
-    <EntitySet Name="SellingDetails" EntityType="Self.SellingDetail" />
-    <EntitySet Name="SellingHeaders" EntityType="Self.SellingHeader" />
+    <EntitySet Name="Attendance" EntityType="Self.Attendance" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Division" EntityType="Self.Division" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeeSalary" EntityType="Self.EmployeeSalary" />
+    <EntitySet Name="Item" EntityType="Self.Item" />
+    <EntitySet Name="JobPosition" EntityType="Self.JobPosition" />
+    <EntitySet Name="PayrollPeriod" EntityType="Self.PayrollPeriod" />
+    <EntitySet Name="SalaryComponent" EntityType="Self.SalaryComponent" />
+    <EntitySet Name="SalaryDefaultValue" EntityType="Self.SalaryDefaultValue" />
+    <EntitySet Name="SellingDetail" EntityType="Self.SellingDetail" />
+    <EntitySet Name="SellingHeader" EntityType="Self.SellingHeader" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
     <AssociationSet Name="FK_Department_Division" Association="Self.FK_Department_Division">
-      <End Role="Division" EntitySet="Divisions" />
-      <End Role="Department" EntitySet="Departments" />
+      <End Role="Division" EntitySet="Division" />
+      <End Role="Department" EntitySet="Department" />
     </AssociationSet>
     <AssociationSet Name="FK_JobPosition_Department" Association="Self.FK_JobPosition_Department">
-      <End Role="Department" EntitySet="Departments" />
-      <End Role="JobPosition" EntitySet="JobPositions" />
+      <End Role="Department" EntitySet="Department" />
+      <End Role="JobPosition" EntitySet="JobPosition" />
     </AssociationSet>
     <AssociationSet Name="FK_Employee_JobPosition" Association="Self.FK_Employee_JobPosition">
-      <End Role="JobPosition" EntitySet="JobPositions" />
-      <End Role="Employee" EntitySet="Employees" />
+      <End Role="JobPosition" EntitySet="JobPosition" />
+      <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
     <AssociationSet Name="FK_EmployeeSalary_PayrollPeriod" Association="Self.FK_EmployeeSalary_PayrollPeriod">
-      <End Role="PayrollPeriod" EntitySet="PayrollPeriods" />
-      <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+      <End Role="PayrollPeriod" EntitySet="PayrollPeriod" />
+      <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
     </AssociationSet>
     <AssociationSet Name="FK_EmployeeSalary_SalaryComponent" Association="Self.FK_EmployeeSalary_SalaryComponent">
-      <End Role="SalaryComponent" EntitySet="SalaryComponents" />
-      <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+      <End Role="SalaryComponent" EntitySet="SalaryComponent" />
+      <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
     </AssociationSet>
     <AssociationSet Name="FK_SellingDetail_Item" Association="Self.FK_SellingDetail_Item">
-      <End Role="Item" EntitySet="Items" />
-      <End Role="SellingDetail" EntitySet="SellingDetails" />
+      <End Role="Item" EntitySet="Item" />
+      <End Role="SellingDetail" EntitySet="SellingDetail" />
     </AssociationSet>
     <AssociationSet Name="FK_SalaryDefaultValue_JobPosition" Association="Self.FK_SalaryDefaultValue_JobPosition">
-      <End Role="JobPosition" EntitySet="JobPositions" />
-      <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValues" />
+      <End Role="JobPosition" EntitySet="JobPosition" />
+      <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValue" />
     </AssociationSet>
     <AssociationSet Name="FK_SalaryDefaultValue_SalaryComponent" Association="Self.FK_SalaryDefaultValue_SalaryComponent">
-      <End Role="SalaryComponent" EntitySet="SalaryComponents" />
-      <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValues" />
+      <End Role="SalaryComponent" EntitySet="SalaryComponent" />
+      <End Role="SalaryDefaultValue" EntitySet="SalaryDefaultValue" />
     </AssociationSet>
     <AssociationSet Name="FK_SellingDetail_SellingHeader" Association="Self.FK_SellingDetail_SellingHeader">
-      <End Role="SellingHeader" EntitySet="SellingHeaders" />
-      <End Role="SellingDetail" EntitySet="SellingDetails" />
+      <End Role="SellingHeader" EntitySet="SellingHeader" />
+      <End Role="SellingDetail" EntitySet="SellingDetail" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

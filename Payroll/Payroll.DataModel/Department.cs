@@ -17,7 +17,7 @@ namespace Payroll.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Department()
         {
-            this.JobPositions = new HashSet<JobPosition>();
+            this.JobPosition = new HashSet<JobPosition>();
         }
     
         public int Id { get; set; }
@@ -32,6 +32,6 @@ namespace Payroll.DataModel
     
         public virtual Division Division { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<JobPosition> JobPositions { get; set; }
+        public virtual ICollection<JobPosition> JobPosition { get; set; }
     }
 }
