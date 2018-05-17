@@ -27,6 +27,14 @@
         <AssociationConnector Association="Payroll.DataModel.FK_SalaryDefaultValue_JobPosition" ManuallyRouted="false" />
         <AssociationConnector Association="Payroll.DataModel.FK_SalaryDefaultValue_SalaryComponent" ManuallyRouted="false" />
         <AssociationConnector Association="Payroll.DataModel.FK_SellingDetail_SellingHeader" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Payroll.DataModel.AccessControl" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Payroll.DataModel.TrPosition" Width="1.5" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="Payroll.DataModel.TrUserAccess" Width="1.5" PointX="3" PointY="3.75" />
+        <AssociationConnector Association="Payroll.DataModel.FK_TrPosition_AccessControl" />
+        <AssociationConnector Association="Payroll.DataModel.FK_TrUserAccess_AccessControl" />
+        <AssociationConnector Association="Payroll.DataModel.FK_TrPosition_TrPosition" />
+        <AssociationConnector Association="Payroll.DataModel.FK_TrPosition_Users" />
+        <AssociationConnector Association="Payroll.DataModel.FK_TrUserAccess_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

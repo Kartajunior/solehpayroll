@@ -1,15 +1,17 @@
-﻿using Payroll.Repository;
+﻿using Payroll.MVC.Security;
+using Payroll.Repository;
 using Payroll.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Payroll.MVC.Controllers
 {
-    [Authorize]
 
+    [CustomAuthorize(Roles = "Department")]
     public class DepartmentController : Controller
     {
         // GET: Department
@@ -24,6 +26,8 @@ namespace Payroll.MVC.Controllers
             return View("_List",DepartmentRepo.Get());
         }
 
+
+        [CustomAuthorize(Roles = "Department", AccessLevel = "W")]
         //GET create
         public ActionResult Create()
         {
@@ -32,6 +36,8 @@ namespace Payroll.MVC.Controllers
         }
 
         //POST create
+        
+
         [HttpPost]
         public ActionResult Create(DepartmentViewModel model)
         {

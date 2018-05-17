@@ -12,19 +12,19 @@ namespace Payroll.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class AccessControl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public AccessControl()
         {
             this.TrPosition = new HashSet<TrPosition>();
             this.TrUserAccess = new HashSet<TrUserAccess>();
         }
     
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
+        public string Controller { get; set; }
+        public string Menu { get; set; }
+        public string Icon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TrPosition> TrPosition { get; set; }

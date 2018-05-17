@@ -125,10 +125,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address\WebAddress.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccessDeniedController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -143,10 +147,15 @@
     <Compile Include="Controllers\SalaryDefaultValueController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Crypto.cs" />
+    <Compile Include="Custom.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MyRoleProvider\SiteRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="Security\SessionPersister.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
@@ -1076,6 +1085,9 @@
     <Content Include="Views\Employee\Employee.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\AccessDenied\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,12 +3,17 @@
 @{
     Layout = "";
 }
+
+@using Payroll.MVC.Security;
+@using Payroll.Repository;
+
+
 <table class="table" id="data-list">
     <thead>
         <tr>
             @*<th>
-                @Html.DisplayNameFor(model => model.Code)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Code)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentCodeName)
             </th>
@@ -21,14 +26,12 @@
             <th></th>
         </tr>
     </thead>
-    
+
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Code)
-                </td>*@
+
                 <td>
                     @Html.DisplayFor(modelItem => item.DepartmentCodeName)
                 </td>
@@ -38,57 +41,80 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.IsActivated)
                 </td>
-                <td>
-                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
-                    <button type="button" class="btn btn-sm btn-warning btn-Edit" data-id="@item.Id">
-                        Edit
-                    </button> |
+                @if (Request.IsAuthenticated)
+                {
 
-                    @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
-                    <button type="button" class="btn btn-sm btn-danger btn-Delete" data-id="@item.Id">
-                        Delete
-                    </button>
+                    var level = AccountRepo.GetAccessRight(SessionPersister.Username, "JobPosition");
+                    if (level.AccessLevel == "W")
+                    {
 
-                </td>
-            </tr>
-        }
-    </tbody>
+                        <td>
 
-    
+                            <button type="button" class="btn btn-sm btn-warning btn-Edit" data-id="@item.Id">
+                                Edit
+                            </button> |
 
-</table>
+
+                            <button type="button" class="btn btn-sm btn-danger btn-Delete" data-id="@item.Id">
+                                Delete
+                            </button>
+
+                        </td>
+                    }
+                }
+        </tr>
+                }
+            </tbody>
+
+
+
+        </table>
+
 
 <script type="text/javascript">
     $("#data-list").DataTable();
-    $(".btn-Edit").click(function () {
-        //alert($(this).attr("data-id"));
+</script>
 
-        $.ajax({
-            url: '@Url.Action("Edit","JobPosition")',
-            type: 'get',
-            data: { id: $(this).attr("data-id") },
-            success: function (result) {
-                $(".modal-body").html(result);
-                $(".modal-title").html("Edit Job Position");
-                $("#modal-Form").modal("show");
-            }
-        })
-    })
+@if (Request.IsAuthenticated)
+{
 
-    $(".btn-Delete").click(function () {
-        //alert($(this).attr("data-id"));
+    var level = AccountRepo.GetAccessRight(SessionPersister.Username, "JobPosition");
+    if (level.AccessLevel == "W")
+    {
+        <script type="text/javascript">
+            $("#data-list").DataTable();
 
-        $.ajax({
-            url: '@Url.Action("Delete","JobPosition")',
-            type: 'get',
-            data: { id: $(this).attr("data-id") },
-            success: function (result) {
-                $(".modal-body").html(result);
-                $(".modal-title").html("Delete Job Position");
-                $("#modal-Form").modal("show");
-            }
-        })
-    })
+            $(".btn-Edit").click(function () {
+                //alert($(this).attr("data-id"));
+
+                $.ajax({
+                    url: '@Url.Action("Edit", "JobPosition")',
+                    type: 'get',
+                    data: { id: $(this).attr("data-id") },
+                    success: function (result) {
+                        $(".modal-body").html(result);
+                        $(".modal-title").html("Edit Job Position");
+                        $("#modal-Form").modal("show");
+                    }
+                })
+            })
+
+            $(".btn-Delete").click(function () {
+                //alert($(this).attr("data-id"));
+
+                $.ajax({
+                    url: '@Url.Action("Delete", "JobPosition")',
+                    type: 'get',
+                    data: { id: $(this).attr("data-id") },
+                    success: function (result) {
+                        $(".modal-body").html(result);
+                        $(".modal-title").html("Delete Job Position");
+                        $("#modal-Form").modal("show");
+                    }
+                })
+            })
 
 </script>
 
+    }
+}

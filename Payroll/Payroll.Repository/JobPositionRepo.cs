@@ -25,7 +25,7 @@ namespace Payroll.Repository
                               DepartmentId = d.DepartmentId,
                               DepartmentCode = dep.Code,
                               DepartmentName = dep.Description,
-                              Description = d.Description,                              
+                              Description = d.Description,
                               IsActivated = d.IsActivated
                           }).ToList();
             }
@@ -39,6 +39,8 @@ namespace Payroll.Repository
                 result = (from d in db.JobPosition
                           join dep in db.Department on
                           d.DepartmentId equals dep.Id
+                          join div in db.Division on
+                          dep.DivisionId equals div.Id
                           where d.Id == id
                           select new JobPositionViewModel
                           {
@@ -47,9 +49,35 @@ namespace Payroll.Repository
                               DepartmentId = d.DepartmentId,
                               DepartmentCode = dep.Code,
                               DepartmentName = dep.Description,
-                              Description = d.Description,                              
+                              DivisionId = div.Id,
+                              DivisionCode = div.Code,
+                              DivisionName = div.Description,
+                              Description = d.Description,
                               IsActivated = d.IsActivated
                           }).FirstOrDefault();
+            }
+            return result;
+        }
+
+        public static List<JobPositionViewModel> GetDepId(int depId)
+        {
+            List<JobPositionViewModel> result = new List<JobPositionViewModel>();
+            using (var db = new PayrollContext())
+            {
+                result = (from dep in db.Department
+                          join job in db.JobPosition on
+                          dep.Id equals job.DepartmentId
+                          where dep.Id == depId
+                          select new JobPositionViewModel
+                          {
+                              Id = job.Id,
+                              Code = job.Code,
+                              Description = job.Description,
+                              DepartmentId = dep.Id,
+                              DepartmentCode = dep.Code,
+                              DepartmentName = dep.Description,
+                              IsActivated = job.IsActivated
+                          }).ToList();
             }
             return result;
         }

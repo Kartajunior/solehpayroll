@@ -1,4 +1,5 @@
-﻿using Payroll.Repository;
+﻿using Payroll.MVC.Security;
+using Payroll.Repository;
 using Payroll.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Web.Mvc;
 
 namespace Payroll.MVC.Controllers
 {
+
+    [CustomAuthorize(Roles = "JobPosition")]
     public class JobPositionController : Controller
     {
         // GET: JobPosition
@@ -21,12 +24,14 @@ namespace Payroll.MVC.Controllers
             return View("_List", JobPositionRepo.Get());
         }
 
+        [CustomAuthorize(Roles = "JobPosition", AccessLevel ="W")]
         public ActionResult Create()
         {
-            ViewBag.DepartmentList = new SelectList(DepartmentRepo.Get(), "Id", "Description");
+            ViewBag.DivisionList = new SelectList(DivisionRepo.Get(), "Id", "Description");
             return View("_Create");
         }
 
+       
         //POST CREATE
         [HttpPost]
         public ActionResult Create(JobPositionViewModel model)
@@ -49,7 +54,7 @@ namespace Payroll.MVC.Controllers
         //GET Edit
         public ActionResult Edit(int Id)
         {
-            ViewBag.DepartmentList = new SelectList(DepartmentRepo.Get(), "Id", "Description");
+            ViewBag.DivisionList = new SelectList(DivisionRepo.Get(), "Id", "Description");
             return View("_Edit", JobPositionRepo.GetById(Id));
         }
 

@@ -19,12 +19,14 @@ namespace Payroll.MVC.Controllers
         //}
 
         // registration Action 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult Registration()
         {
             return View();
         }
 
+       
         [NonAction]
         public bool IsUserXsist(string user)
         {
@@ -105,11 +107,11 @@ namespace Payroll.MVC.Controllers
 
                         if (Url.IsLocalUrl(ReturnUrl))
                         {
-                            return RedirectToAction(ReturnUrl);
+                            return Redirect(ReturnUrl);
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "JobPosition");
                         }
                     }
                 }

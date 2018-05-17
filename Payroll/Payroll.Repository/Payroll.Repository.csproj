@@ -49,7 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountRepo.cs" />
     <Compile Include="AttendanceRepo.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="DepartmentRepo.cs" />
     <Compile Include="DivisionRepo.cs" />
     <Compile Include="EmployeeRepo.cs" />

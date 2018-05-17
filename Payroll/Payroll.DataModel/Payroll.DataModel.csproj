@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessControl.cs">
+      <DependentUpon>PayrollModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Attendance.cs">
       <DependentUpon>PayrollModel.tt</DependentUpon>
     </Compile>
@@ -102,6 +105,12 @@
       <DependentUpon>PayrollModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SellingHeader.cs">
+      <DependentUpon>PayrollModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrPosition.cs">
+      <DependentUpon>PayrollModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrUserAccess.cs">
       <DependentUpon>PayrollModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">

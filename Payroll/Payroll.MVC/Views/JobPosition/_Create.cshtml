@@ -20,11 +20,19 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.DivisionId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DivisionId, (IEnumerable<SelectListItem>)ViewBag.DivisionList, "Select Division", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DepartmentId, (IEnumerable<SelectListItem>)ViewBag.DepartmentList, "Select Department", new { @class = "form-control" })
-                @*@Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+                <select class="form-control valid" data-val="true" data-val-number="The field Division must be a number." data-val-required="The Department field is required." id="DepartmentId" name="DepartmentId">
+                    <option value="">Select Department</option>
+                </select>
             </div>
         </div>
 
@@ -79,5 +87,25 @@
         })
         return false;
     })
+
+    $('#DivisionId').change(function () {
+        $.ajax({
+            url: 'http://localhost:5495/api/departments/division/' + $(this).val(),
+            type: 'GET',
+            success: function (result) {
+                //alert(JSON.stringify(result));
+                $('#DepartmentId').html('<option value="">Select Department</option>');
+                $.each(result, function (i, item) {
+                    var option = '<option value="' + item.Id + '">' + item.Description + '</option>';
+                    $('#DepartmentId').append(option);
+
+                })
+            },
+            error: function (err) {
+                //alert(err);
+                $('#DepartmentId').html('<option value="">Select Department</option>');
+            }
+        })
+    });
 
 </script>

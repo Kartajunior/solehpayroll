@@ -38,7 +38,7 @@ namespace Payroll.ViewModel
         {
             get
             {
-                return "[" + Code + "] " + Description;
+                return "[" + DivisionCode + "] " + Description;
             }
         }
 

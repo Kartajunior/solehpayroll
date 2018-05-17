@@ -1,4 +1,7 @@
 ﻿
+@using Payroll.MVC.Security;
+@using Payroll.Repository;
+
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
@@ -6,127 +9,48 @@
                 <img src="~/AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                @*<p>M Soleh</p>*@
-                @*<a href="#"><i class="fa fa-circle text-success"></i> Online</a>*@
-                <p>  @HttpContext.Current.User.Identity.Name </p>
+
+
+                <p> @SessionPersister.Username </p>
+
+
 
                 @if (Request.IsAuthenticated)
                 {
-                    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+                    using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
                     {
                         <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
                     }
                 }
+                else
+                {
+                    <a href="@Url.Action("Logout", "Account")">Login</a>
+                }
+
+
+
+
             </div>
         </div>
-        <ul class="sidebar-menu" style=" height: auto; overflow: hidden; width: auto; padding-bottom: 20%;">
-            <li class="header"><strong>MAIN NAVIGATION</strong></li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-paperclip"></i>
-                    <span> Master</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="@Url.Action("Index", "Division")">
-                            <i class="fa fa-book"></i><span>Division</span>
+        <ul class="sidebar-menu" style=" height auto; overflow hidden; width auto; padding-bottom 20%;">
+            <li class="header"><strong>MENU NAVIGATION</strong></li>
+           @{
+               if (Request.IsAuthenticated)
+               {
+                   foreach (var form in AccountRepo.GetPrivilegeFormsByUsername(SessionPersister.Username))
+                   {
+                    <li class="treeview">
+                        <a href="@Url.Action("", form.Controller)">
+                            <i class="@form.Icon"></i> <span> @form.Menu</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Department")">
-                            <i class="fa fa-book"></i><span>Department</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "JobPosition")">
-                            <i class="fa fa-book"></i><span>Job Position</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Employee")">
-                            <i class="fa fa-book"></i><span>Employee</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Attendance")">
-                            <i class="fa fa-book"></i><span>Attendance</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "PayrollPeriod")">
-                            <i class="fa fa-book"></i><span>Payroll Period</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "SalaryComponent")">
-                            <i class="fa fa-book"></i><span>Salary Component</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "SalaryDefaultValue")">
-                            <i class="fa fa-book"></i><span>Salary Default Value</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "EmployeeSalary")">
-                            <i class="fa fa-book"></i><span>Employee Salary</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-paperclip"></i>
-                    <span>POS</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="@Url.Action("Index", "Item")">
-                            <i class="fa fa-compass"></i><span>Item</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "SellingHeader")">
-                            <i class="fa fa-compass"></i><span>Selling Header</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "SellingDetail")">
-                            <i class="fa fa-compass"></i><span>Selling Detail</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-database"></i>
-                    <span>Transaksi</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    
-                    <li>
-                        <a href="@Url.Action("Index", "Payroll")">
-                            <i class="fa fa-book"></i><span>Payroll</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                   }
+               }
+        }
+        
 
-            <li>
-                @if (Request.IsAuthenticated)
-                {
-                    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
-                    {
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Log out </a>
-                    }
-                }
-                    
-                    
-                
-            </li>
+
+
 
         </ul>
     </section>
